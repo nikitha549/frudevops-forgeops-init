@@ -75,6 +75,9 @@
                         "searchable" : false,
                         "minLength" : 8,
                         "userEditable" : true,
+                        "encryption" : {
+                            "purpose": "idm.password.encryption"
+                        },
                         "scope" : "private",
                         "isProtected": true,
                         "usageDescription" : "",
@@ -103,20 +106,6 @@
                                 }
                             }
                         ]
-                    },
-                    "cn" : {
-                        "description" : "Common Name",
-                        "type" : "string",
-                        "viewable" : false,
-                        "searchable" : false,
-                        "userEditable" : false,
-                        "scope" : "private",
-                        "isPersonal" : true,
-                        "isVirtual" : true,
-                        "onStore" : {
-                            "type" : "text/javascript",
-                            "source" : "object.cn || (object.givenName + ' ' + object.sn)"
-                        }
                     },
                     "kbaInfo" : {
                         "description" : "KBA Info",

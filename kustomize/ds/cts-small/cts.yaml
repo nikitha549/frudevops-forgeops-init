@@ -26,3 +26,12 @@ spec:
         requests:
           storage: 100Gi
       storageClassName: fast
+  - metadata:
+      name: backup
+      annotations:
+        pv.beta.kubernetes.io/gid: "0"
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Gi

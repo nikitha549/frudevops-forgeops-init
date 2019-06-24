@@ -1,20 +1,23 @@
-FROM gcr.io/forgerock-io/am/pit1:7.0.0-latest-postcommit
+FROM gcr.io/forgerock-io/openam:6.5.2
 
-# BEGIN - temporary work around for testing if the ds-idrepo is configured before AM starts. Remove when FBC is integrated
+# BEGIN tools for testing if the ds-idrepo is configured before AM starts.
 # Installs ldap utils for querying the repo.
 USER root
-RUN apt-get update && apt-get install ldap-utils
+
+# For debian
+#RUN apt-get update && apt-get install ldap-utils
+# Alpine:
+
+RUN apk add openldap-clients
+
 USER forgerock
-COPY --chown=forgerock:root openam /home/forgerock/openam
-# END
 
-COPY logback.xml /usr/local/tomcat/webapps/am/WEB-INF/classes
+# We now use path based routing - so AM must be deployed on /am
+RUN mv /usr/local/tomcat/webapps/ROOT /usr/local/tomcat/webapps/am
 
 
-# This copies in the boot.json and other files...
 COPY --chown=forgerock:root openam /home/forgerock/openam
 
-# Override the entrypoint and just start tomcat
 #CMD ["catalina.sh", "run"]
 
-CMD ["/home/forgerock/openam/boot.sh"]
+ENTRYPOINT ["/home/forgerock/openam/boot.sh"]

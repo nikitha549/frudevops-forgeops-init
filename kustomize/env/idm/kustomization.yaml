@@ -1,0 +1,25 @@
+# Deploys to default.iam.forgeops.com. Uses the LE issuer for SSL.
+namespace: default
+bases:
+- ../../idm
+- ../../postgres
+- ../../ingress
+- ../../frconfig
+- ../../ds/idrepo
+patchesStrategicMerge:
+- platform-config.yaml
+vars:
+- fieldref:
+    fieldPath: data.DOMAIN
+  name: DOMAIN
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: platform-config
+- fieldref:
+    fieldPath: data.SUBDOMAIN
+  name: SUBDOMAIN
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: platform-config

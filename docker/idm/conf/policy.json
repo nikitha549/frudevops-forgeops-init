@@ -209,9 +209,6 @@
                                                         "null"
                                                     ]
                                                 }
-                                            },
-                                            {
-                                                "policyId" : "valid-query-filter"
                                             }
                                         ]
                                     }

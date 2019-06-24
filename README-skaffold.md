@@ -7,6 +7,28 @@ and will continually redeploy changes as they are made.
 When assets are ready to be tested in QA or production, `skaffold run` deploys the final configurations.
 Typically this will be a CD process triggered from a git commit or a pull request.
 
+## Preview of Skaffold development with 6.5 products
+
+This preview is provided to demonstrate using skaffold with supported ForgeRock platform binaries (currently 6.5.2). 
+ForgeRock provides support for the product binaries. The samples here must be adapted for your environment, andmust not
+be put into production without extensive testing.
+
+Note that several features are not supported in this preview:
+
+* Directory Server: The deployment does not implement the backup and restore features. ForgeRock 
+ recommends deploying production directory services on traditional VM infrastructure.
+* IDM and AM are deployed as separate products and are not integrated. 
+* IDM uses the postgres database, and does not use the directory server as a repository.
+* The postgres database provided is for development purposes. For production deployment
+ a managed database instance is recommended.
+ 
+Differences from 6.5 include:
+
+* The ingress now uses path based routing and a single FQDN for deployment.
+ The format is `https://$NAMESPACE.$SUBDOMAIN.$DOMAIN/{am|admin}`
+* For example:   https://default.iam.example.com/am 
+
+
 ## EA Documentation
 
 Please see [here](https://ea.forgerock.com/docs/platform/devops-guide-minikube/index.html#devops-implementation-env-about-the-env)
@@ -22,7 +44,7 @@ Familiarity with Kubernetes / Minikube is assumed.
 * Install the Kubernetes Client. Using a mac:  `brew install kubernetes-cli`
 * Install [skaffold](https://skaffold-latest.firebaseapp.com/) and [kustomize](https://kustomize.io/). On a mac:
    `brew install skaffold kustomize`
-* kubens / kubectx are not required but super handy:  `brew install kubectx`
+* kubens / kubectx are not required but are super handy:  `brew install kubectx`
 * Start minikube: `minikube start --memory 8196`.  8 GB of RAM is recommended.
 * Make sure the ingress add-on is enabled: `minikube addons enable ingress`
 * Install cert-manager by running this script:  `./bin/deploy-cert-manager.sh`

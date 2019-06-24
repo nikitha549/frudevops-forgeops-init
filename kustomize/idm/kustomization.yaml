@@ -1,14 +1,17 @@
 kind: ""
 apiversion: ""
 commonLabels:
-    app: openidm
-    component: idm
+    app: idm
 resources:
 - boot-properties.yaml
 - logging-properties.yaml
 - configmap.yaml
-- idm.yaml
-# - ingress.yaml
-- idm-secrets.yaml
-- secrets.yaml
+- statefulset.yaml
 - service.yaml
+secretGenerator:
+- name: idm-secrets
+  type: Opaque
+  files:
+  - secrets/keystore.jceks
+  - secrets/truststore
+  - secrets/realm.properties

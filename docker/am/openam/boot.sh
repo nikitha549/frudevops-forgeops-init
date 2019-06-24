@@ -18,7 +18,7 @@ echo "ds-idrepo is responding"
 # can result in util installer running again - which in most cases is fine - it will refresh the configuraition.
 
 SVC="ou=services,$BASE_DN"
-r=$(ldapsearch -w password  -D "uid=admin" -A -H "ldap://ds-idrepo:1389" -s base -l 20 -b "$TEST_DN"  > /dev/null 2>&1)
+r=$(ldapsearch -w password  -D "cn=Directory Manager" -A -H "ldap://ds-idrepo:1389" -s base -l 20 -b "$TEST_DN"  > /dev/null 2>&1)
 status=$?
 echo "Is configured exit status is $status"
 if [ $status -ne 0 ]; then 
@@ -28,10 +28,14 @@ else
     echo "ds-idrepo configured - keeping boot.json"
     echo "Making log path to avoid audit service startup error "
     mkdir -p /home/forgerock/openam/am/log
+    mkdir -p /home/forgerock/openam/am/debug
     echo "Copying bootstrap files for legacy AMKeyProvider"
     cp /var/run/secrets/am/boot/.storepass /home/forgerock/openam/am
     cp /var/run/secrets/am/boot/.keypass /home/forgerock/openam/am
     cp /var/run/secrets/am/boot/keystore.jceks /home/forgerock/openam/am
+    echo "Fixing up openamcfg"
+    rm -f /home/forgerock/.openamcfg/*
+    echo "/home/forgerock/openam" >  /home/forgerock/.openamcfg/AMConfig_usr_local_tomcat_webapps_am_  \
 
 fi
 

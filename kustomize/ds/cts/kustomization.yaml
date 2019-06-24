@@ -2,6 +2,8 @@ commonLabels:
   app: ds-cts
 bases:
 - ../base
+patchesStrategicMerge:
+- configmap.yaml
 nameSuffix: -cts
 images:
 - newName: ds-cts

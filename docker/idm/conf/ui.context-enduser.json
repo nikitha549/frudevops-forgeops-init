@@ -1,6 +1,6 @@
 {
-    "enabled" : false,
-    "urlContextRoot" : "/idm",
+    "enabled" : true,
+    "urlContextRoot" : "/enduser",
     "defaultDir" : "&{idm.install.dir}/ui/enduser",
     "responseHeaders" : {
         "X-Frame-Options" : "DENY"

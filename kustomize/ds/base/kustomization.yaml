@@ -3,12 +3,10 @@ commonLabels:
   app: ds
 resources:
 - configmap.yaml
-# - secrets.yaml
 - service.yaml
 - statefulset.yaml
-# TODO: Right now we use the DS generated secrets. If we need common secrets uncomment this
-# secretGenerator:
-# - name: ds
-#   files:
-#   - secrets/keystore.pin
-#   - secrets/keystore
+secretGenerator:
+ - name: ds
+   files:
+   - secrets/keystore.pin
+   - secrets/keystore

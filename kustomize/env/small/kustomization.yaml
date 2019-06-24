@@ -7,16 +7,14 @@ bases:
 - ../../ds/idrepo-small
 - ../../ds/cts-small
 - ../../am
-- ../../config-util
+- ../../amster
 - ../../idm
-- ../../end-user-ui
 - ../../ingress
-# - ../../ig
+- ../../postgres
 patchesStrategicMerge:
 - platform-config.yaml
 - am.yaml
 - idm.yaml
-# - ig.yaml
 # TODO: We should be able to factor this out to a common base
 vars:
   - fieldref:

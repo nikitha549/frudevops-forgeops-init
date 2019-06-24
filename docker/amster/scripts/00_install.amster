@@ -20,16 +20,16 @@ install-openam \
    --adminPwd amadminPassword \
    --cfgStore dirServer \
    --cfgStoreHost ds-idrepo \
-   --cfgStoreDirMgr uid=admin \
+   --cfgStoreDirMgr "cn=Directory Manager"  \
    --cfgStoreDirMgrPwd password \
    --cfgStorePort 1389 \
    --cfgStoreRootSuffix "ou=am-config" \
-   --userStoreDirMgr "uid=admin" \
+   --userStoreDirMgr "cn=Directory Manager" \
    --userStoreDirMgrPwd  "password" \
    --userStoreHost "ds-idrepo" \
    --userStorePort 1389 \
    --userStoreRootSuffix "ou=identities" \
-   --userStoreType "LDAPv3ForForgeRockIAM" \
+   --userStoreType "LDAPv3ForOpenDS" \
    --policyAgentPwd "Passw0rd" \
    --pwdEncKey "C00lBeans" \
    --acceptLicense \

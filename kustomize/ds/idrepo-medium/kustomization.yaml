@@ -1,5 +1,0 @@
-# Sample showing how to create a kustomized cts
-bases:
-- ../idrepo
-patchesStrategicMerge:
-- idrepo.yaml

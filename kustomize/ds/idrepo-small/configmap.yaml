@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ds
+data:
+  OPENDJ_JAVA_ARGS: "-server -Xmx3g"
+  DS_SET_SIZE: "2"

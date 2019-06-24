@@ -1,12 +1,10 @@
 apiVersion: v1
 data:
   boot.properties: |
-    openidm.repo.host=ds-idrepo
-    openidm.repo.port=1389
-    openidm.repo.user=uid=admin
-    # todo: When the idm profile switches to this user, use this instead:
-    #openidm.repo.user=uid=am-identity-bind-account,ou=admins,ou=identities
-    openidm.repo.password=password
+    openidm.repo.host=postgresql
+    openidm.repo.port=5432
+    openidm.repo.user=openidm
+    openidm.repo.password=openidm
     openidm.repo.databaseName=openidm
     openidm.repo.schema=openidm
 
@@ -17,7 +15,7 @@ data:
     openidm.idpconfig.clientsecret=password
 
     # These are for the (ldap) provisioner i.e. used for synchronization
-    userstore.host=userstore-0.userstore
+    userstore.host=idrepo
     userstore.password=password
     userstore.port=1389
     userstore.basecontext=ou=identities

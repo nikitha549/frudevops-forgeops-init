@@ -4,4 +4,6 @@ metadata:
   name: ds
 data:
   # -XX:+PrintFlagsFinal
-  OPENDJ_JAVA_ARGS: "-server -XX:MaxRAMPercentage=75"
+  OPENDJ_JAVA_ARGS: "-server -Xmx512m"
+  DJ_INSTANCE: "ds-idrepo"
+  DS_SET_SIZE: "1"
