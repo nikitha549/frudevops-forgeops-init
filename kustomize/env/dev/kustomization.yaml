@@ -7,7 +7,22 @@ bases:
   - ../../am
   - ../../amster
   - ../../idm
-  - ../../end-user-ui
   - ../../ingress
+  - ../../postgres
 patchesStrategicMerge:
   - platform-config.yaml
+vars:
+- fieldref:
+    fieldPath: data.DOMAIN
+  name: DOMAIN
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: platform-config
+- fieldref:
+    fieldPath: data.SUBDOMAIN
+  name: SUBDOMAIN
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: platform-config
