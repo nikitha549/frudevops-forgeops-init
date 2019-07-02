@@ -13,9 +13,3 @@ patchesJson6902:
       kind: Ingress
       name: forgerock
     path: ingress_patch.json
-  - target:
-      group: extensions
-      version: v1beta1
-      kind: Ingress
-      name: end-user-ui
-    path: ingress_patch.json

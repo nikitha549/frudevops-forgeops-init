@@ -24,19 +24,19 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: openam
+          serviceName: am
           servicePort: 80
         path: /am
       - backend:
-          serviceName: openidm
+          serviceName: idm
           servicePort: 80
         path: /openidm
       - backend:
-          serviceName: openidm
+          serviceName: idm
           servicePort: 80
         path: /admin
       - backend:
-          serviceName: openidm
+          serviceName: idm
           servicePort: 80
         path: /enduser
       - backend:
@@ -49,7 +49,7 @@ spec:
       #     servicePort: 80
       #   path: /enduser-ui
       - backend:
-          serviceName: openig
+          serviceName: ig
           servicePort: 80
         path: /ig
   tls:
