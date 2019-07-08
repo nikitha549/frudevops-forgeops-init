@@ -19,6 +19,13 @@ deploy:
   kustomize:
     path: ./kustomize/env/example
 profiles:
+- name: pentest
+  build:
+    tagPolicy:
+      gitCommit: {}
+  deploy:
+    kustomize:
+      path: ./kustomize/env/pentest
 # Run just idm
 - name: idm
   build:
