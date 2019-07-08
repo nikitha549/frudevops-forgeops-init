@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: platform-config
 data:
-  FQDN: $(NAMESPACE).iam.forgeops.com
-  SUBDOMAIN: iam
+  FQDN: $(NAMESPACE).pentest.forgeops.com
+  SUBDOMAIN: pentest
   DOMAIN: forgeops.com

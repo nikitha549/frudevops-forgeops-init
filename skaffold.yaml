@@ -38,7 +38,7 @@ profiles:
       sha256: {}
   deploy:
     kustomize:
-      path: ./kustomize/env/ig
+      path: ./kustomize/ig
 # Run just idm
 - name: idm
   build:
