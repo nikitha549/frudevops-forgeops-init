@@ -13,6 +13,8 @@ build:
     context: docker/ds/cts
   - image: ds-idrepo
     context: docker/ds/idrepo
+  - image: ig
+    context: docker/ig
   tagPolicy:
     sha256: {}
 deploy:
@@ -26,6 +28,17 @@ profiles:
   deploy:
     kustomize:
       path: ./kustomize/env/pentest
+# Run just ig
+- name: ig
+  build:
+    artifacts:
+    - image: ig
+      context: docker/ig
+    tagPolicy:
+      sha256: {}
+  deploy:
+    kustomize:
+      path: ./kustomize/env/ig
 # Run just idm
 - name: idm
   build:

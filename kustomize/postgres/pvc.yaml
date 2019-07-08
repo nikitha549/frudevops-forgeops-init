@@ -3,6 +3,7 @@ apiVersion: v1
 metadata:
   name: postgres-idm
 spec:
+  persistentVolumeReclaimPolicy: Retain
   accessModes:
   - ReadWriteOnce
   #storageClassName: standard

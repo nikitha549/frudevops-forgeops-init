@@ -1,4 +1,4 @@
-FROM gcr.io/forgerock-io/ig/pit1:7.0.0-latest-postcommit
+FROM gcr.io/forgerock-io/openig:6.5.2
 
 # Copy all config files into the docker image.
 #COPY --chown=forgerock ./ /config
