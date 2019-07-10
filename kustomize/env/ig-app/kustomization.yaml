@@ -1,0 +1,5 @@
+# Deploys to default.iam.forgeops.com. Uses the LE issuer for SSL.
+namespace: default
+bases:
+  - ../../ig
+  - ../../pentest-app
