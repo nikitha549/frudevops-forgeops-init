@@ -24,6 +24,10 @@ spec:
     http:
       paths:
       - backend:
+          serviceName: agent
+          servicePort: 80
+        path: /agent
+      - backend:
           serviceName: am
           servicePort: 80
         path: /am

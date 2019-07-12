@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: agent
+    component: agent
+    vendor: forgerock
+  name: agent
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+    spec:
+      containers:
+      - name: agent
+        env:
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        image: agent
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80 
+        resources:
+          requests:
+            cpu: 200m
+            memory: 256Mi
