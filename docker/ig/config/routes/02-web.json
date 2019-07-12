@@ -87,6 +87,14 @@
                                         },
                                         "amService": "AmService"
                                     }
+                                },
+                                {
+                                    "type": "PolicyEnforcementFilter",
+                                    "config": {
+                                        "amService": "AmService",
+                                        "application": "app",
+                                        "ssoTokenSubject": "${contexts.cdsso.token}"
+                                    }
                                 }
                             ],
                             "handler": "UrlRewrite"
