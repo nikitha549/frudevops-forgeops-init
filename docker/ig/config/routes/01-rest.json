@@ -72,7 +72,7 @@
           "type": "Delegate",
           "MyCapture": "all",
           "config": {
-            "delegate": "ClientHandler"
+            "delegate": "ForgeRockClientHandler"
           }
         }
       }
