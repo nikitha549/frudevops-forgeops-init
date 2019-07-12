@@ -11,7 +11,7 @@
     "name" : "adminPolicy",
     "active" : true,
     "description" : "",
-    "resources" : [ "*://*:*/agent/admin/*", "*://*:*/agent/admin/*?*" ],
+    "resources" : [ "*://*:*/agent/admin*", "*://*:*/agent/admin*?*" ],
     "applicationName" : "agentPolicy",
     "actionValues" : {
       "POST" : true,

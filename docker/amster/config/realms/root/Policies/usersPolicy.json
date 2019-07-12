@@ -11,7 +11,7 @@
     "name" : "usersPolicy",
     "active" : true,
     "description" : "",
-    "resources" : [ "*://*:*/agent/restricted/*", "*://*:*/agent/restricted/*?*" ],
+    "resources" : [ "*://*:*/agent/restricted*", "*://*:*/agent/restricted*?*" ],
     "applicationName" : "agentPolicy",
     "actionValues" : {
       "POST" : true,
