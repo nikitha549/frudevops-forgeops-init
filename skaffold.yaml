@@ -30,6 +30,17 @@ profiles:
   deploy:
     kustomize:
       path: ./kustomize/env/pentest
+# Run just agent
+- name: agent
+  build:
+    artifacts:
+    - image: agent
+      context: docker/agent
+    tagPolicy:
+      sha256: {}
+  deploy:
+    kustomize:
+      path: ./kustomize/agent
 # Run just ig
 - name: ig
   build:
