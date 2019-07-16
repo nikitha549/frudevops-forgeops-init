@@ -22,11 +22,13 @@ r=$(ldapsearch -w password  -D "cn=Directory Manager" -A -H "ldap://ds-idrepo:13
 status=$?
 echo "Is configured exit status is $status"
 
-ls -lR /home/forgerock/.openamcfg
 # Remove the config location - we generate as required
 rm -rf /home/forgerock/.openamcfg
 
-if [ $status -ne 0 ]; then 
+# Remove the config location - we generate as required
+rm -rf /home/forgerock/.openamcfg
+
+if [ $status -ne 0 ]; then
     echo "Looks like ds-idrepo is not configured. I will remove boot.json"
     rm /home/forgerock/openam/boot.json
 else
@@ -38,9 +40,11 @@ else
     cp /var/run/secrets/am/boot/.storepass /home/forgerock/openam/am
     cp /var/run/secrets/am/boot/.keypass /home/forgerock/openam/am
     cp /var/run/secrets/am/boot/keystore.jceks /home/forgerock/openam/am
+
     echo "Generating .openamcfg"
     mkdir -p  /home/forgerock/.openamcfg
     echo "/home/forgerock/openam"  > /home/forgerock/.openamcfg/AMConfig_usr_local_tomcat_webapps_am_
+
 fi
 
 exec catalina.sh run 
