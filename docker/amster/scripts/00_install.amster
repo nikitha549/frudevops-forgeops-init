@@ -5,7 +5,7 @@
 this.binding.variables << [
    fqdn: System.getenv("FQDN") ?: "default.iam.example.com",
    cookieDomain: System.getenv("DOMAIN") ?: "example.com",
-   amadminPassword: System.getenv("AMADMIN_PASSWORD") ?: "wS9GUQ58A",
+   amadminPassword: System.getenv("AMADMIN_PASSWORD") ?: "xxxxxxxx",
    lbUrl:  "https://" + (System.getenv("FQDN") ?: "default.iam.example.com") + "/am",
 ] 
 
