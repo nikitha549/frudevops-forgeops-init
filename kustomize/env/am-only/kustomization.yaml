@@ -2,11 +2,11 @@
 namespace: default
 bases:
   - ../../frconfig
-  - ../../ds/cts
-  - ../../ds/idrepo
+#  - ../../ds/cts
+#  - ../../ds/idrepo
   - ../../am
-  - ../../amster
-  - ../../ingress
+#  - ../../amster
+#  - ../../ingress
 patchesStrategicMerge:
   - platform-config.yaml
 vars:

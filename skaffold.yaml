@@ -86,12 +86,12 @@ profiles:
     artifacts:
     - image: am
       context: docker/am
-    - image: amster
-      context: docker/amster
-    - image: ds-cts
-      context: docker/ds/cts
-    - image: ds-idrepo
-      context: docker/ds/idrepo
+#    - image: amster
+#      context: docker/amster
+#    - image: ds-cts
+#      context: docker/ds/cts
+#    - image: ds-idrepo
+#      context: docker/ds/idrepo
     tagPolicy:
       sha256: {}
   deploy:
