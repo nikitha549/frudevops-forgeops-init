@@ -23,7 +23,7 @@ status=$?
 echo "Is configured exit status is $status"
 
 ls -lR /home/forgerock/.openamcfg
-# Remmove the config location - we generate as required
+# Remove the config location - we generate as required
 rm -rf /home/forgerock/.openamcfg
 
 if [ $status -ne 0 ]; then 
