@@ -3,8 +3,6 @@ kind: Config
 # Default configuration
 build:
   artifacts:
-  - image: agent
-    context: docker/agent
   - image: am
     context: docker/am
   - image: amster
@@ -23,13 +21,6 @@ deploy:
   kustomize:
     path: ./kustomize/env/example
 profiles:
-- name: pentest
-  build:
-    tagPolicy:
-      gitCommit: {}
-  deploy:
-    kustomize:
-      path: ./kustomize/env/pentest
 # Run just agent
 - name: agent
   build:
@@ -52,7 +43,7 @@ profiles:
   deploy:
     kustomize:
       path: ./kustomize/ig
-# Run ig and pentest app
+# Run ig and sample app
 - name: ig-app
   build:
     artifacts:

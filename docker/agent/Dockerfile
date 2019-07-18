@@ -19,7 +19,7 @@ RUN sed -i 's/#LoadModule http2/LoadModule http2/g' /usr/local/apache2/conf/http
     sed -i '/# Configure mod_proxy/a ProxyPassReverse /agent/ http://pentest-app:80/web/' /usr/local/apache2/conf/httpd.conf; \
     sed -i '/# Configure mod_proxy/a ProxyPass /agent/ http://pentest-app:80/web/' /usr/local/apache2/conf/httpd.conf;
 
-# Copy Agent file to image
+# Copy Agent file to image. Note that you must obtain the agent zip from backstage.
 COPY web-agent-5.6.1.0-Apache_v24_Linux_64bit.zip /opt/agent.zip
 
 # Unzip agent file and delete it

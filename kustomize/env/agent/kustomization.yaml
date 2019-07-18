@@ -2,7 +2,6 @@
 namespace: default
 bases:
   - ../../agent
-  - ../../pentest-app
   - ../../frconfig
 patchesStrategicMerge:
   - platform-config.yaml

@@ -1,11 +1,10 @@
-# ForgeRock DevOps and Cloud Deployment
+# ForgeRock DevOps and Cloud Deployment - Skaffold Preview Branch
 
 Kubernetes DevOps artifacts for the ForgeRock platform.
 
-** IMPORTANT: The current supported branch is release/6.5.2. The master branch is under development **
+** This branch is a preview of the upcoming 7.x workflow using skaffold and kustomize **
 
-Please refer to the [Platform Documentation for 6.5](https://backstage.forgerock.com/docs/platform/6.5). In
-particular refer to the [What's New section of the release notes.](https://backstage.forgerock.com/docs/platform/6.5/release-notes/#chap-rnotes-whats-new)
+Please see the [skaffold readme](README-skaffold.md).
 
 This GitHub repository is a read-only mirror of 
 ForgeRock's [https://stash.forgerock.org/projects/CLOUD/repos/forgeops] (Bitbucket Server repository). Users
@@ -25,24 +24,11 @@ service or software related thereto. ForgeRock shall not be liable for any direc
 consequential damages or costs of any type arising out of any action taken by you or others related
 to the samples.
 
-## Branches
-
-The master branch targets
-features that are still in development and may not be stable. Please checkout the
- branch that matches the targeted release.
-
-
-For example, if you have the source checked out from git:
-
-```bash
-git checkout release/6.5.1
-```
-
 
 ## Contents 
 
 * `kustomize` - Kustomize manifests for deploying the platform. See [README-skaffold.md](README-skaffold.md)
-* `helm/` - contains Kubernetes helm charts to deploy those containers. See the helm/README.md
+* `helm/` - Helm charts. NOT Used in this branch. Here for reference.
 * `etc/` - contains various scripts and utilities
 * `bin/`  - Utility shell scripts to deploy the helm charts and create and manage clusters.
 
