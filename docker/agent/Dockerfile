@@ -8,13 +8,14 @@ FROM httpd:2.4
 RUN apt-get update; \
     apt-get install unzip -y
 
-# Enable HTTP2 protocol and proxy
+# Enable HTTP2 protocol, proxy and set request limit to 0.5 MB
 RUN sed -i 's/#LoadModule http2/LoadModule http2/g' /usr/local/apache2/conf/httpd.conf; \
     sed -i 's/#LoadModule proxy_http2_module /LoadModule proxy_http2_module /g' /usr/local/apache2/conf/httpd.conf; \
     sed -i 's/#LoadModule proxy_module /LoadModule proxy_module /g' /usr/local/apache2/conf/httpd.conf; \
     sed -i 's/#LoadModule proxy_http_/LoadModule proxy_http_/g' /usr/local/apache2/conf/httpd.conf; \
     sed -i 's@Include conf/extra/proxy-html.conf@#Include conf/extra/proxy-html.conf@g' /usr/local/apache2/conf/httpd.conf; \
     sed -i '/Listen 80/a Protocols h2c h2 http/1.1' /usr/local/apache2/conf/httpd.conf; \
+    sed -i '/# Configure mod_proxy/a LimitRequestBody 524288' /usr/local/apache2/conf/httpd.conf; \
     sed -i '/# Configure mod_proxy/a ProxyPassReverse /agent/ http://pentest-app:80/web/' /usr/local/apache2/conf/httpd.conf; \
     sed -i '/# Configure mod_proxy/a ProxyPass /agent/ http://pentest-app:80/web/' /usr/local/apache2/conf/httpd.conf;
 
