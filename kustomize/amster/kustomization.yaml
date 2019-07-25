@@ -5,5 +5,5 @@ commonLabels:
   vendor: forgerock
 resources:
 - amster.yaml
-- config-map.yaml
-- secrets.yaml
+- configmap.yaml
+- secret.yaml

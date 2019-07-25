@@ -5,7 +5,7 @@ commonLabels:
 resources:
 - deployment.yaml
 - service.yaml
-- pvc.yaml
+- persistent-volume-claim.yaml
 configMapGenerator:
 - files:
   - sql/01_openidm.sql
