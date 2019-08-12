@@ -9,7 +9,7 @@
   "data" : {
     "_id" : "agent-profile",
     "ssoWebAgentConfig" : {
-      "secureCookies" : false,
+      "secureCookies" : true,
       "cookieName" : "iPlanetDirectoryPro",
       "cdsso" : false,
       "cdssoCookieDomain" : [ "" ],
@@ -76,7 +76,7 @@
       "changeProtocolToHttps" : false,
       "overrideRequestHost" : false,
       "showPasswordInHeader" : false,
-      "customProperties" : [ "com.forgerock.agents.config.logout.redirect.disable=true" ],
+      "customProperties" : [ "com.forgerock.agents.config.logout.redirect.disable=true", "com.sun.identity.cookie.httponly=true" ],
       "useLtpaToken" : false,
       "overrideRequestPort" : true,
       "logonAndImpersonation" : false,
