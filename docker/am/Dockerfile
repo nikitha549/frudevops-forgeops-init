@@ -18,6 +18,6 @@ RUN mv /usr/local/tomcat/webapps/ROOT /usr/local/tomcat/webapps/am
 
 COPY --chown=forgerock:root openam /home/forgerock/openam
 
-#CMD ["catalina.sh", "run"]
-
-ENTRYPOINT ["/home/forgerock/openam/boot.sh"]
+# Use CMD with -x instead of ENTRYPOINT to support Windows deployments
+# Without it, Docker does not know boot.sh is executable on Windows
+CMD ["bash", "-x", "/home/forgerock/openam/boot.sh"]

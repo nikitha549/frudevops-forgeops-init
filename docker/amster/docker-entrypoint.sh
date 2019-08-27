@@ -43,7 +43,9 @@ pause)
     pause
     ;;
 configure)
-    # invoke amster install.
+    # Without this chmod, Docker does not know the file is executable on Windows
+    chmod +x amster-install.sh
+    # Invoke amster install
     ./amster-install.sh
     pause
     ;;
