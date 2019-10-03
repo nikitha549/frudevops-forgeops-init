@@ -8,7 +8,7 @@ patchesStrategicMerge:
 # This patches the ingress object to use the ca-issuer instead of the letsencrypt-prod
 patchesJson6902:
   - target:
-      group: extensions
+      group: networking.k8s.io
       version: v1beta1
       kind: Ingress
       name: forgerock

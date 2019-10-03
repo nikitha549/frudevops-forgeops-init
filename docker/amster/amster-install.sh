@@ -67,6 +67,10 @@ echo "Waiting for AM server at ${CONFIG_URL} "
 
 wait_for_openam
 
+# CLOUD-1639
+# On occaasion, AM can be up before the config store is up, causing the amster install
+# to fail. The sleep is a low tech solution...
+sleep 30
 
 # Execute Amster if the configuration is found.
 if [ -d  ${AMSTER_SCRIPTS} ]; then

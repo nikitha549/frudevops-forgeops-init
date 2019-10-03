@@ -1,6 +1,6 @@
 # NOTE: NOT USED
 # Unless we need to strip the /ig - we just re-use the existing ingress /ig patho
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   annotations:

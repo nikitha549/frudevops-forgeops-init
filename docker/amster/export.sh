@@ -7,7 +7,7 @@ mkdir -p /var/tmp/amster
 # Create Amster export script.
 # Note the https: url should be used in case secure cookies are enabled
 cat > /tmp/do_export.amster <<EOF
-connect -k  /var/run/secrets/amster/id_rsa https://$NAMESPACE.$SUBDOMAIN.$DOMAIN/am
+connect -k /var/run/secrets/amster/id_rsa  http://am:80/am
 export-config --realms /  --path /var/tmp/amster
 :quit
 EOF
