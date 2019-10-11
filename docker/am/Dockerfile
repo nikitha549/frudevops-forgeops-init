@@ -18,6 +18,5 @@ RUN mv /usr/local/tomcat/webapps/ROOT /usr/local/tomcat/webapps/am
 
 COPY --chown=forgerock:root openam /home/forgerock/openam
 
-# Override upstream entrypoint
+# Note that the upstream AM image does not execute our custom script. We override here
 ENTRYPOINT ["/home/forgerock/openam/boot.sh"]
-
