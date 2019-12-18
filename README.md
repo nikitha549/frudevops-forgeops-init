@@ -1,14 +1,17 @@
 # ForgeRock DevOps and Cloud Deployment - Skaffold Preview Branch
 
+> ** DEPRECATED **: The skaffold preview has now been merged into the `master` branch.
+> Please see the EA documentation at https://ea.forgerock.com/docs/forgeops/index.html
+
 Kubernetes DevOps artifacts for the ForgeRock platform.
 
 ** This branch is a preview of the upcoming 7.x workflow using skaffold and kustomize **
 
 Please see the [skaffold readme](README-skaffold.md).
 
-This GitHub repository is a read-only mirror of 
+This GitHub repository is a read-only mirror of
 ForgeRock's [https://stash.forgerock.org/projects/CLOUD/repos/forgeops] (Bitbucket Server repository). Users
-with BackStage accounts can make pull requests on our Bitbucket Server repository. ForgeRock does not 
+with BackStage accounts can make pull requests on our Bitbucket Server repository. ForgeRock does not
 accept pull requests on this GitHub mirror.
 
 ## Disclaimer
@@ -25,7 +28,7 @@ consequential damages or costs of any type arising out of any action taken by yo
 to the samples.
 
 
-## Contents 
+## Contents
 
 * `kustomize` - Kustomize manifests for deploying the platform. See [README-skaffold.md](README-skaffold.md)
 * `helm/` - Helm charts. NOT Used in this branch. Here for reference.
@@ -34,7 +37,7 @@ to the samples.
 
 
 
-## Documentation 
+## Documentation
 
 The [Draft ForgeRock DevOps Guide](https://ea.forgerock.com/docs/platform/devops-guide-minikube/index.html#devops-implementation-env-about-the-env)
 tracks the master branch.
@@ -60,7 +63,7 @@ Refer to the toubleshooting chapter in the [DevOps Guide](https://backstage.forg
 Troubleshooting suggestions:
 
 * The script `bin/debug-log.sh` will generate an HTML file with log output. Useful for troubleshooting.
-* Simplify. Deploy a single product at a time (for example, ds), and make sure it is working correctly before deploying the next product. 
+* Simplify. Deploy a single product at a time (for example, ds), and make sure it is working correctly before deploying the next product.
 * Describe a failing pod using `kubectl get pods; kubectl describe pod pod-xxx`
     1. Look at the event log for failures. For example, the image can't be pulled.
     2. Examine all the init containers. Did each init container complete with a zero (success) exit code? If not, examine the logs from that failed init container using `kubectl logs pod-xxx -c init-container-name`
